@@ -2,7 +2,9 @@ cmake_minimum_required ( VERSION 2.8)
 project(high-dimension-knn)
 include_directories(./ ./common ./e2lsh ./rtree ./traversal)
 aux_source_directory(. DIR_SRCS)
-add_executable(test_all ${DIR_SRCS})
+add_executable(test_all ./test_all.cpp)
+add_executable(generate_points ./generate_points.cpp)
+target_link_libraries(generate_points common traversal)
 target_link_libraries(test_all common rtree traversal)
 
 # 添加子目录
