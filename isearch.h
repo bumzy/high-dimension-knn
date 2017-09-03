@@ -12,8 +12,8 @@ public:
     virtual int remove(const std::vector<int>& point, int key) = 0;
     virtual std::vector<int> knn(const std::vector<int>& point, size_t k) = 0;
 protected:
-    static const int _data_set_file_interval = 4;
-    static const int _query_set_file_interval = 11;
+    static const int _data_set_file_interval = 15;
+    static const int _query_set_file_interval = 15;
 };
 
 #endif

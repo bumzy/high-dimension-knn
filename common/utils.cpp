@@ -28,6 +28,25 @@ int read_file(std::ifstream& istrm, int dimension, std::vector<std::vector<int> 
     return 0;
 }
 
+int write_file(std::ofstream& ostrm, int dimension, const std::vector<std::vector<int> >& point_vec) {
+    std::string str;
+    for (int i = 0; i < (int)point_vec.size(); ++i) {
+        if ((int)point_vec[i].size() != dimension) {
+            return false;
+        }
+        for (int j = 0; j < dimension; ++j) {
+            str += std::to_string(point_vec[i][j]);
+            if (j < dimension - 1) {
+                str += " ";
+            } else {
+                str += "\n";
+            }
+        }
+    }
+    ostrm << str;
+    return 0;
+}
+
 void print_vector_int(const std::vector<int>& v){
     for (size_t i = 0; i < v.size(); ++i) {
         std::cerr << v[i] << " ";
